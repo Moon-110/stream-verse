@@ -55,6 +55,23 @@ const cardDemo ={
 const displayVideos = (videos) =>{
     const videoContainer = document.getElementById('videos');
     videoContainer.innerHTML = "";
+
+    if(videos.length == 0){
+        videoContainer.classList.remove('grid')
+        videoContainer.innerHTML = `
+        <div class="min-h-[400px] w-full flex flex-col gap-5 justify-center items-center">
+        <img src="./assets/images/Icon.png"/>
+        <h2 class="font-bold text-[36px]">No Content Here</h2>
+
+        </div>
+        `;
+        return;
+
+    }
+    else{
+        videoContainer.classList.add('grid')
+    }
+
     videos.forEach((videos) => {
      console.log(videos)
 
